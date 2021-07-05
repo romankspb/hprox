@@ -8,7 +8,7 @@ RUN dnf install -y curl unzip \
 && unzip /tmp/hprox-master.zip -d /tmp/ \
 && cd /tmp/hprox-master \
 && stack setup --verbose \
-&& stack install --local-bin-path /usr/local/bin
+&& stack install --verbose --local-bin-path /usr/local/bin
 
 FROM fedora:latest
 ENV HPROX_PORT 8080
