@@ -1,8 +1,8 @@
-# HProx
+## hprox
 
-Containerized lightweight HTTP/HTTPS proxy server `hprox`
+`romankspb/hprox` is a containerized lightweight HTTP/HTTPS proxy server
 
-# Features
+### Features
 
 * Basic HTTP proxy functionality.
 * Simple password authentication.
@@ -14,19 +14,19 @@ Containerized lightweight HTTP/HTTPS proxy server `hprox`
 * Implemented as a middleware, compatible with any Haskell Web Application built with `wai` interface.
   Defaults to fallback to a dumb application which simulate the default empty page from Apache.
 
-# Run `hprox`
+### Run `hprox`
 
 ```
 podman run --rm --name hprox -p 8080:8080 romankspb/hprox
 ```
 
-# Run `hprox` with simple password authentication
+### Run `hprox` with simple password authentication
 
 ```
 echo "user:pass" > /opt/hprox/userpass.txt && \
 podman run --rm --name hprox -p 8080:8080 -v /opt/hprox/userpass.txt:/opt/hprox/userpass.txt -e HPROX_OPTIONS='-a /opt/hprox/userpass.txt' romankspb/hprox
 ```
 
-# Documentation
+### Documentation
 
-Please see `hprox` repo at https://github.com/bjin/hprox
+For more documentation please see `hprox` repo at https://github.com/bjin/hprox
