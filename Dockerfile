@@ -7,7 +7,7 @@ RUN dnf install -y curl unzip \
 && curl -sSL ${HPROX_DIST} -o /tmp/hprox-master.zip \
 && unzip /tmp/hprox-master.zip -d /tmp/ \
 && cd /tmp/hprox-master \
-&& stack setup \
+&& stack setup --verbose \
 && stack install --local-bin-path /usr/local/bin
 
 FROM fedora:latest
