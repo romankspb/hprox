@@ -16,13 +16,13 @@
 
 ### Run `hprox`
 
-```
+```sh
 podman run --rm --name hprox -p 8080:8080 romankspb/hprox
 ```
 
 ### Run `hprox` with simple password authentication
 
-```
+```sh
 echo "user:pass" > /opt/hprox/userpass.txt && \
 podman run --rm --name hprox -p 8080:8080 -v /opt/hprox/userpass.txt:/opt/hprox/userpass.txt -e HPROX_OPTIONS='-a /opt/hprox/userpass.txt' romankspb/hprox
 ```
