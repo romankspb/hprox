@@ -1,4 +1,4 @@
-FROM fedora:latest as build
+FROM centos:latest as build
 
 ENV HPROX_VER 0.1.1
 
@@ -9,7 +9,7 @@ RUN curl -sSL https://get.haskellstack.org/ | sh \
 && stack setup --verbose \
 && stack install --verbose --local-bin-path /usr/local/bin
 
-FROM fedora:latest
+FROM centos:latest
 ENV HPROX_PORT 8080
 COPY --from=build /usr/local/bin/hprox /usr/local/bin/
 EXPOSE ${HPROX_PORT}
